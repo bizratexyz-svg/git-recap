@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "git-recap"
+version = "0.1.0"
+description = "Generate clean daily/weekly standup recaps and ASCII activity charts from local git repositories"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [{ name = "git-recap contributors" }]
+keywords = ["git", "standup", "recap", "cli", "markdown", "developer-tools"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+[project.scripts]
+git-recap = "git_recap.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/git_recap"]
